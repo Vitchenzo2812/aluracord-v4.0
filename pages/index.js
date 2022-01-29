@@ -1,7 +1,8 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import React from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import appConfig from '../config.json';
+import { ButtonSendSticker } from '../src/components/ButtonSendSticker';
 
 function Title(props) {
     const Tag = props.tag || 'h1';
@@ -70,7 +71,7 @@ export default function HomePage() {
                 infoEvent.preventDefault();
                 //console.log('Apertaram o botão!')
                 //window.location.href = '/chat'
-                router.push('/chat');
+                router.push(`/chat?username=${username}`);
               }}
               styleSheet={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
